@@ -1,9 +1,12 @@
 #include <iostream>
-#include "opencv2/opencv.hpp"
-#include "src/DataLoader.h"
+#include "src/ConfigUI.h"
+#include <QMainWindow>
+#include <QApplication>
 
-int main() {
-    std::cout << "This is great!, Oh no no no!" << std::endl;
-    DataLoader::sayHello();
-    return 0;
+int main(int argc, char *argv[]) {
+    QApplication app(argc, argv);
+    QMainWindow mainWindow = QMainWindow();
+    MyWidgetsForConfig ConfigUI = MyWidgetsForConfig();
+    ConfigUI.show();
+    return QApplication::exec();
 }
